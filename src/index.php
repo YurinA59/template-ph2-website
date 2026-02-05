@@ -1,4 +1,3 @@
-
 <?php require_once('dbconnect.php');
 // dbconnect.php  の中に書かれたコードが、ここにそのまま貼り付けられたように動く
 // $sql = 'SELECT * FROM questions'; // SQLという変数はquestionテーブルの中方全部取ったやつ
@@ -24,7 +23,7 @@ foreach ($questions as $qKey => $question) {
     $questions[$qKey] = $question;
     // 元のやつが上の処理を受けて書き換わるやつ、実行してる的な？前までのやつは処理だけ書いて実行はしてない
 }
- var_dump($questions);
+// var_dump($questions);
 // 変数の中身を “ありのまま全部” 表示してくれる関数→だからこれであってるか確認してねー
 
 
@@ -49,7 +48,6 @@ foreach ($questions as $qKey => $question) {
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
     rel="stylesheet">
-  <script src="./assets/scripts/quiz4.js" defer></script>
 </head>
 
 <body>
@@ -115,31 +113,7 @@ foreach ($questions as $qKey => $question) {
             </figure>
         </div>
         <div class="p-quiz-box__answer">
-          <!-- <span class="p-quiz-box__label p-quiz-box__label--accent">A</span>
-          <ul class="p-quiz-box__answer__list">
-            <li class="p-quiz-box__answer__item">
-              <button class="p-quiz-box__answer__button js-answer" data-answer="0">
-                約28万人<i class="u-icon__arrow"></i>
-              </button>
-            </li>
-            <li class="p-quiz-box__answer__item">
-              <button class="p-quiz-box__answer__button js-answer" data-answer="1">
-                約79万人<i class="u-icon__arrow"></i>
-              </button>
-            </li>
-            <li class="p-quiz-box__answer__item">
-              <button class="p-quiz-box__answer__button js-answer" data-answer="2">
-                約183万人<i class="u-icon__arrow"></i>
-              </button>
-            </li>
-          </ul>
-          <div class="p-quiz-box__answer__correct js-answerBox">
-            <p class="p-quiz-box__answer__correct__title js-answerTitle"></p>
-            <p class="p-quiz-box__answer__correct__content">
-              <span class="p-quiz-box__answer__correct__content__label">A</span>
-              <span class="js-answerText"></span>
-            </p> -->
-            <span class="p-quiz-box__label p-quiz-box__label--accent">A</span>
+          <span class="p-quiz-box__label p-quiz-box__label--accent">A</span>
             <ul class="p-quiz-box__answer__list">
               <li class="p-quiz-box__answer__item">
                 <button class="p-quiz-box__answer__button js-answer" data-answer="0"
@@ -148,14 +122,14 @@ foreach ($questions as $qKey => $question) {
                 </button>
               </li>
               <li class="p-quiz-box__answer__item">
-                <button class="p-quiz-box__answer__button js-answer" data-answer="1">
-                  <?= $questions[$i]["choices"][1]["name"]; ?><i class="u-icon__arrow"></i
-                  data-correct="<?= $questions[$i]["choices"][0]["valid"] ?>">
+                <button class="p-quiz-box__answer__button js-answer" data-answer="1"
+                data-correct="<?= $questions[$i]["choices"][1]["valid"] ?>">
+                  <?= $questions[$i]["choices"][1]["name"]; ?><i class="u-icon__arrow"></i>
                 </button>
               </li>
               <li class="p-quiz-box__answer__item">
                 <button class="p-quiz-box__answer__button js-answer" data-answer="2"
-                data-correct="<?= $questions[$i]["choices"][0]["valid"] ?>">
+                data-correct="<?= $questions[$i]["choices"][2]["valid"] ?>">
                   <?= $questions[$i]["choices"][2]["name"]; ?><i class="u-icon__arrow"></i>
                 </button>
               </li>
@@ -172,14 +146,7 @@ foreach ($questions as $qKey => $question) {
           <i class="u-icon__note"></i><?= $questions[$i]["supplement"]; ?>
         </cite>
       </section>
-      <div class="p-quiz-box__answer__correct js-answerBox">
-  <p class="p-quiz-box__answer__correct__title js-answerTitle"></p>
-  <p class="p-quiz-box__answer__correct__content">
-    <span class="p-quiz-box__answer__correct__content__label">A</span>
-    <span class="js-answerText"></span>
-  </p>
-</div>
-
+    </div>
       <!-- ./p-quiz-box -->
   <?php } ?>
 
@@ -241,6 +208,10 @@ foreach ($questions as $qKey => $question) {
   </footer>
   <!-- /.l-footer .p-footer -->
 
+<script>
+console.log("インラインテスト");
+</script>
+<script src="./assets/scripts/quiz4.js"></script>
 </body>
 
 </html>
